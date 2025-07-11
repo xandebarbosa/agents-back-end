@@ -5,6 +5,7 @@ import {
   validatorCompiler,
   type ZodTypeProvider,
 } from "fastify-type-provider-zod";
+import { env } from "./env.ts";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -15,9 +16,7 @@ app.register(fastifyCors, {
 app.setSerializerCompiler(serializerCompiler);
 app.setValidatorCompiler(validatorCompiler);
 
-app
-  .listen({ port: process.env.PORT ? Number(process.env.PORT) : 3333 })
-  .then(() => {
-    console.log(`Port: ${process.env.PORT}`);
-    console.log("Server running on http://localhost:3333");
-  });
+app.listen({ port: env.PORT }).then(() => {
+  console.log(`Port: ${process.env.PORT}`);
+  console.log("Server running on http://localhost:3333");
+});
