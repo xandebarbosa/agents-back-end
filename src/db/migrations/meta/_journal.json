@@ -8,6 +8,13 @@
       "when": 1752603916783,
       "tag": "0000_late_tempest",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1752860809013,
+      "tag": "0001_strange_millenium_guard",
+      "breakpoints": true
     }
   ]
 }
